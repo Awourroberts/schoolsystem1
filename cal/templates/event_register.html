@@ -1,0 +1,123 @@
+<!-- {% include 'navbar.html' %} -->
+{% block title %}
+<h1>Event Calender</h1>
+{% endblock %}
+{% block content %}
+<div class="clearfix">
+    <a class="btn info" href="{% url 'events:calendar' %}"> </a>
+</div>
+{% if form.errors %}
+{% for field in form %}
+{% for error in field.errors %}
+<div class="alert alert-danger">
+    {{ field.label }} <strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endfor %}
+{% for error in form.non_field_errors %}
+<div class="alert alert-danger">
+    {{ field.label }} <strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <style>
+    </style>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <table class="form form-table">
+                <label for="first_name">Event Title:</label>
+                <div class="form-group">
+                    {{ form.title}}
+                </div>
+                <label for="second_name">Venue:</label>
+                <div class="form-group">
+                    {{ form.venue}}
+                </div>
+   
+                <label for="second_name">Description:</label>
+                <div class="form-group">
+                    {{ form.description}}
+                </div>
+                <label for="gender">Start_Time:</label>
+                <div class="form-group">
+                    {{ form.start_time}}
+                </div>
+                <label for="email">End_Time:</label>
+                <div class="form-group">
+                    {{ form.end_time}}
+                </div>
+                <tr>
+                    <td colspan="2"><button type="submit" class="register"> Submit </button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: purple;
+            padding: 300px;
+            padding-top: 0%;
+            background-color: black;
+        }
+
+        input {
+            width: 100%;
+            outline: none;
+            border: 2px solid;
+            font-size: 12px;
+            padding: 8px 8px;
+            border-radius: 6px;
+        }
+
+        .form-group {
+            width: 100%;
+            outline: none;
+            border: 2px solid;
+            font-size: 12px;
+            padding: 8px 8px;
+            border-radius: 6px;
+        }
+
+        .form-control {
+            background-color: burlywood;
+            width: 100%;
+            border: purple;
+        }
+
+        textarea {
+            width: 102%;
+            border-radius: 6px;
+        }
+
+        .container {
+            border-radius: 20px;
+            padding: 120px;
+            background-color: burlywood;
+            width: 500px;
+        }
+
+        button {
+            margin-left: 350%;
+            color: black;
+            border-radius: 30px;
+            width: 150%;
+            background-color: purple;
+            margin-top: 10px;
+        }
+    </style>
+</body>
+
+</html>
+{% endblock %}

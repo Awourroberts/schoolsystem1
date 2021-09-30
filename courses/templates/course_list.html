@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+              background-color: azure;
+            }
+        table{
+            width: 800px;
+            margin: auto;
+            text-align: center;
+            table-layout:auto;
+        }
+        table,tr,th,td{
+            padding: 20px;
+            color: purple;
+            border: 1px solid rgb(6, 61, 99);
+            border-collapse: collapse;
+            font-size: 15px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(top,rgb(130, 238, 229) 0%,rgb(145, 241, 212) 100%);
+            text-align: center;
+            margin-top: 40px;
+        }
+        td:hover{
+            background: rgb(148, 206, 253) ;
+        }
+        h1{
+            text-align: center;
+            color: rgb(82, 226, 226);
+            padding-top: 10%;
+        }
+        </style>
+        <body>
+            <h1>Course List</h1>
+        <table class="table">
+            <tr>
+                <th>course</th>
+                <th>trainer</th>
+                <th>course_code</th>
+                <th>syllabus</th>
+                <th>description</th>
+                <th>course_schedule</th>
+                <th>assignment</th>
+                </tr>
+        {% for course in courses %}
+        <tbody>
+            <tr>
+            <td>{{course.course}}</td>
+                <td>{{course.trainer}}</td>
+                <td>{{course.course.code}}</td>
+                <td>{{course.syllabus}}</td>
+                <td>{{course.description}}</td>
+                <td>{{course.course_schedule}}</td>
+                <td>{{course.assignment}}</td>
+                </tr>
+            </tbody>
+            {%endfor%}
+        </table>
+</body>
+</html>

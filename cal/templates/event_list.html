@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {% block title %}
+    {{ calendar }}
+    {% endblock %}
+    <h1>Calendar</h1>
+    <style>
+        body {
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: purple;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+            font-family: 'Ubuntu';
+            border-spacing: 0;
+            background-color: rgb(51, 47, 47);
+        }
+
+        th,
+        td {
+            border: 3px solid rgba(20, 192, 214, 0.1);
+            box-sizing: border-box;
+        }
+
+        th {
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 10px 0;
+            color: #bca0dc;
+            background-color: #292929;
+            letter-spacing: 1px;
+        }
+
+        td {
+            width: 14.285%;
+            transition: all 0.3s;
+            font-size: 14px;
+            color: white;
+            font-weight: 400;
+            font-size: 14px;
+            padding: 1.5% 1.5% 5%;
+            vertical-align: initial;
+            padding: 1.5% 0;
+            height: 75px;
+        }
+
+        .event {
+            height: 4px;
+            background-color: rgba(109, 102, 102, 0.3);
+            display: block;
+            margin: 5px 10%;
+            border-radius: 2px;
+            background-color: #91C33B;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <style>table, td, th {
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 15px;
+    }
+    th{
+      background-color: rgb(221, 168, 226);
+      color: black;
+    }
+    tr:hover {
+      background-color:rgb(244, 240, 245);
+      cursor: pointer;
+    }
+    img{
+      height: 50px;
+      width: 50px;
+    }
+  </style>
+<head>
+</head>
+<body>
+   <h1>Trainer Registration List</h1>
+    <table class="table">
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>course</th>
+            <th>work_experience</th>
+            <th>contract</th>
+            <th>trainer_gender</th>
+            <th>trainer_id</th>
+            <th>profile_picture</th>
+            <th>biograph</th>
+            <th>date_hired</th>
+            <th>national_id</th>
+            <th>language</th>
+            <th>age</th>
+           
+
+        </tr>
+        {% for trainer in trainers %}
+        <tbody>
+        <tr>
+           
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.course}}</td>
+            <td>{{trainer.work_experience}}</td>
+            <td>{{trainer.contract}}</td>
+            <td>{{trainer.trainer_gender}}</td>
+            <td>{{trainer.trainer_id}}</td>
+            <td>{{trainer.profile_picture}}</td>
+            {% if trainer.profile %}
+            <td><img src="{{trainer.profile.url}}"></td>
+            {% endif %}
+            <td>{{trainer.biograph}}</td>
+            <td>{{trainer.date_hired}}</td>
+            <td>{{trainer.national_id}}</td>
+            <td>{{trainer.language}}</td>
+            <td>{{trainer.age}}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>

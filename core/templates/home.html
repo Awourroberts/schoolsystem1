@@ -1,0 +1,88 @@
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+    </head>
+
+    <body>
+
+        <style>
+            .home {
+
+                background-color: rgb(180, 107, 130);
+                position: fixed;
+                height: 10%;
+                top: 0;
+                width: 100%;
+                color: green;
+
+            }
+
+            .home a {
+                margin-right: 2%;
+                color: black;
+                padding: 10px 16px;
+                text-decoration: none;
+                font-size: 70px;
+            }
+
+            .home a:hover {
+                color: white;
+            }
+
+            .hh {
+                margin-top: 50%;
+                text-align: center;
+                color: rgb(68, 33, 33);
+                padding: 40px;
+                float: right;
+            }
+
+            .nav-bar {
+                font-size: 30px;
+                text-decoration: none;
+                padding-left: 30px;
+                float: right;
+                color: white;
+                background-color: purple;
+                width: 300px;
+
+            }
+
+            .nav-bar:hover {
+                cursor: pointer;
+                color: red;
+            }
+
+            img {
+                padding-top: 100px;
+                height: 850px;
+                width: 1690px;
+                position: fixed;
+            }
+
+            .home_image {
+                height: 850px;
+                width: 1690px;
+            }
+        </style>
+        <div>
+            <a class="nav-bar" href="{% url 'student_list' %}"> Student</a>
+            <a class="nav-bar" href="{% url 'trainer_list' %}"> Trainer </a>
+            <a class="nav-bar" href="{% url 'courses_list' %}"> Course</a>
+            <a class="nav-bar" href="{% url 'calendar'%}"> Event</a>
+
+            <!-- <a class="nav-bar" href="{% url 'register_student' %}"> Student</a>
+        <a class="nav-bar" href="{% url 'register_trainer' %}"> Trainer </a>
+        <a class="nav-bar" href="{% url 'register_courses' %}"> Course</a> -->
+        </div>
+        <!-- <div class="home_image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Ng5pPFuQjLF42kNQk-P2ZPK8YIlIuR3C7Q&usqp=CAU" alt="">
+</div> -->
+    </body>
+
+    </html>
